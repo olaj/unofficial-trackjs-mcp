@@ -1,0 +1,57 @@
+{
+  "data": [
+    {
+      "message": "ReferenceError: data is not defined",
+      "timestamp": "2016-07-23T19:24:43.394+00:00",
+      "url": "https://my.trackjs.com/daily?date=2016-07-23",
+      "id": "5d893bd8c50346fe9b97af36af530f2d",
+      "browserName": "Chrome",
+      "browserVersion": "51.0.2704",
+      "entry": "window",
+      "line": 387,
+      "column": 41,
+      "file": "https://my.trackjs.com/daily?date=2016-07-23",
+      "userId": "todd@trackjs.com",
+      "sessionId": "",
+      "status": "Investigating",
+      "trackJsUrl": "https://my.trackjs.com/details/5d893bd8c50346fe9b97af36af530f2d",
+      "stackTrace": [
+        "ReferenceError: data is not defined",
+        " at HTMLDocument (https://my.trackjs.com/daily?date=2016-07-23:387:41)",
+        " at c (https://my.trackjs.com/js/lib/jquery/jquery-1.10.2.min.js:4:26036)",
+        " at Object.fireWith [as resolveWith] (https://my.trackjs.com/js/lib/jquery/jquery-1.10.2.min.js:4:26840)",
+        " at Function.ready (https://my.trackjs.com/js/lib/jquery/jquery-1.10.2.min.js:4:3305)",
+        " at HTMLDocument.q (https://my.trackjs.com/js/lib/jquery/jquery-1.10.2.min.js:4:717)"
+      ],
+      "metadata": [
+        { "key": "subscription", "value": "Professional" }
+      ]
+    },
+    {
+      "message": "test",
+      "timestamp": "2016-07-23T19:20:01.000+00:00",
+      "url": "https://example.com/checkout",
+      "id": "0a1b2c3d4e5f60718293a4b5c6d7e8f9",
+      "browserName": "Firefox",
+      "browserVersion": "47.0",
+      "entry": "direct",
+      "line": 0,
+      "column": 0,
+      "file": "",
+      "userId": "",
+      "sessionId": "",
+      "status": "",
+      "trackJsUrl": "https://my.trackjs.com/details/0a1b2c3d4e5f60718293a4b5c6d7e8f9",
+      "metadata": []
+    }
+  ],
+  "metadata": {
+    "startDate": "2018-11-20T00:00:00Z",
+    "endDate": "2018-11-27T00:00:00Z",
+    "totalCount": 193,
+    "page": 1,
+    "size": 3,
+    "hasMore": true,
+    "trackJsUrl": "https://my.trackjs.com/recent"
+  }
+}

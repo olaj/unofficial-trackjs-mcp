@@ -1,0 +1,17 @@
+{
+  "data": [
+    {
+      "key": "https://my.trackjs.com/",
+      "count": 104,
+      "userCount": 50,
+      "trackJsUrl": "https://my.trackjs.com/urls/filtered?url=https%3a%2f%2fmy.trackjs.com%2f&"
+    }
+  ],
+  "metadata": {
+    "startDate": "2014-09-11T00:00:00Z",
+    "page": 1,
+    "size": 3,
+    "hasMore": true,
+    "trackJsUrl": "https://my.trackjs.com/urls"
+  }
+}

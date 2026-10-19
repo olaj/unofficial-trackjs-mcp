@@ -1,0 +1,13 @@
+{
+  "data": [
+    { "key": "2014-09-12T00:00:00Z", "count": 2835 },
+    { "key": "2014-09-11T00:00:00Z", "count": 3890 }
+  ],
+  "metadata": {
+    "startDate": "2014-09-01T00:00:00Z",
+    "totalCount": 11,
+    "page": 1,
+    "size": 3,
+    "hasMore": true
+  }
+}

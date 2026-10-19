@@ -1,0 +1,29 @@
+[
+  {
+    "timestamp": "2023-01-18T07:00:00+00:00",
+    "pageViews": 556,
+    "totalErrors": 3126,
+    "processedErrors": 2762,
+    "ignoredErrors": 352,
+    "droppedErrors": 0,
+    "errorsPerPageView": 5.622
+  },
+  {
+    "timestamp": "2023-01-18T08:00:00+00:00",
+    "pageViews": 645,
+    "totalErrors": 3260,
+    "processedErrors": 2859,
+    "ignoredErrors": 345,
+    "droppedErrors": 0,
+    "errorsPerPageView": 5.054
+  },
+  {
+    "timestamp": "2023-01-19T00:00:00+00:00",
+    "pageViews": 100,
+    "totalErrors": 50,
+    "processedErrors": 40,
+    "ignoredErrors": 5,
+    "droppedErrors": 5,
+    "errorsPerPageView": 0.5
+  }
+]

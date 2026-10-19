@@ -1,0 +1,23 @@
+{
+  "data": [
+    {
+      "key": "2014-09-24T00:00:00Z",
+      "count": 36,
+      "userCount": 10,
+      "trackJsUrl": "https://my.trackjs.com/daily/filtered?date=9%2f24%2f2014&"
+    },
+    {
+      "key": "2014-09-23T00:00:00Z",
+      "count": 14,
+      "userCount": 4,
+      "trackJsUrl": "https://my.trackjs.com/daily/filtered?date=9%2f23%2f2014&"
+    }
+  ],
+  "metadata": {
+    "startDate": "2014-09-11T00:00:00Z",
+    "page": 1,
+    "size": 3,
+    "hasMore": true,
+    "trackJsUrl": "https://my.trackjs.com/daily"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "key": "Cannot read property on of undefined",
+      "count": 54,
+      "userCount": 12,
+      "lastSeen": "2016-09-22T22:42:23.579+00:00",
+      "status": "Investigating",
+      "trackJsUrl": "https://my.trackjs.com/messages/filtered?message=Cannot+read+property+%27on%27+of+undefined&"
+    }
+  ],
+  "metadata": {
+    "startDate": "2014-09-11T00:00:00Z",
+    "page": 1,
+    "size": 3,
+    "hasMore": true,
+    "trackJsUrl": "https://my.trackjs.com/messages"
+  }
+}
