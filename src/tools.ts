@@ -29,7 +29,7 @@ const isoDate = (which: "start" | "end") =>
   z
     .string()
     .trim()
-    .refine((v) => !Number.isNaN(Date.parse(v)), {
+    .refine((v) => /^\d{4}-\d{2}-\d{2}/.test(v) && !Number.isNaN(Date.parse(v)), {
       message: "Must be an ISO 8601 date or date-time, e.g. 2026-10-01 or 2026-10-01T14:00:00Z",
     })
     .optional()

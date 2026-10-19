@@ -1,0 +1,71 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Typecheck, lint, test, build (Node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # The dev toolchain (vitest) needs Node 22+.
+        node: [22, 24]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
+      - name: Check package contents
+        run: npm pack --dry-run
+      - uses: actions/upload-artifact@v4
+        if: matrix.node == 22
+        with:
+          name: dist
+          path: dist
+
+  runtime:
+    name: Runtime smoke test (Node ${{ matrix.node }})
+    needs: check
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # The published package supports Node >=18.
+        node: [18, 20]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+      - run: npm ci --omit=dev --ignore-scripts
+      - name: Fails clearly without credentials
+        run: |
+          if node dist/index.js 2> err.txt; then echo "expected failure"; exit 1; fi
+          grep -q "TRACKJS_API_KEY" err.txt
+      - name: Lists tools over stdio
+        env:
+          TRACKJS_API_KEY: ci-placeholder
+          TRACKJS_CUSTOMER_ID: ci-placeholder
+        run: |
+          printf '%s\n' \
+            '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"ci","version":"0"}}}' \
+            '{"jsonrpc":"2.0","method":"notifications/initialized"}' \
+            '{"jsonrpc":"2.0","id":2,"method":"tools/list"}' \
+            | timeout 10 node dist/index.js > out.txt || true
+          grep -q '"list_errors"' out.txt
+          grep -q '"usage_by_hour"' out.txt

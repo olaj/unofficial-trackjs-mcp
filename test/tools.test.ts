@@ -109,6 +109,7 @@ describe("list_errors", () => {
     const bad = await s.call("list_errors", { startDate: "last tuesday" });
     expect(bad.result.isError).toBe(true);
     expect(bad.text).toMatch(/ISO 8601/);
+    expect((await s.call("list_errors", { endDate: "1" })).result.isError).toBe(true);
 
     const inverted = await s.call("list_errors", { startDate: "2026-10-10", endDate: "2026-10-01" });
     expect(inverted.result.isError).toBe(true);
