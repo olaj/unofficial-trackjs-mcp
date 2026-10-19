@@ -6,3 +6,7 @@ coverage/
 .env
 .env.*
 .DS_Store
+
+# MCP registry publisher CLI and its login token
+mcp-publisher*
+.mcpregistry_*
