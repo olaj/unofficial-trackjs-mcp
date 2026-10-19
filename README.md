@@ -37,11 +37,10 @@ If either is missing, the server exits at startup with a message saying which on
 ### Claude Code
 
 ```sh
-claude mcp add --transport stdio \
-  --env TRACKJS_API_KEY=your-api-key \
-  --env TRACKJS_CUSTOMER_ID=your-customer-id \
-  trackjs -- npx -y unofficial-trackjs-mcp
+claude mcp add trackjs --transport stdio --env TRACKJS_API_KEY=your-api-key --env TRACKJS_CUSTOMER_ID=your-customer-id -- npx -y unofficial-trackjs-mcp
 ```
+
+Put the server name (`trackjs`) first and the `--env` options last, right before `--`. `--env` accepts several values in a row, so a name placed after it is read as another variable.
 
 Add `--scope user` to make it available in every project, or `--scope project` to write it to a shared `.mcp.json` (don't commit real keys; `.mcp.json` supports `${TRACKJS_API_KEY}` style environment expansion).
 
@@ -147,7 +146,7 @@ To try a local build in Claude Code:
 
 ```sh
 npm run build
-claude mcp add --env TRACKJS_API_KEY=... --env TRACKJS_CUSTOMER_ID=... trackjs-dev -- node /absolute/path/to/dist/index.js
+claude mcp add trackjs-dev --env TRACKJS_API_KEY=... --env TRACKJS_CUSTOMER_ID=... -- node /absolute/path/to/dist/index.js
 ```
 
 You can also inspect it with the [MCP Inspector](https://github.com/modelcontextprotocol/inspector):
