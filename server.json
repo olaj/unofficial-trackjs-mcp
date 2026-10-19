@@ -1,0 +1,36 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.olaj/unofficial-trackjs-mcp",
+  "title": "TrackJS (unofficial)",
+  "description": "Unofficial read-only access to the TrackJS Data API: errors, top messages, trends and page views.",
+  "repository": {
+    "url": "https://github.com/olaj/unofficial-trackjs-mcp",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "unofficial-trackjs-mcp",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "TRACKJS_API_KEY",
+          "description": "TrackJS Data API key (Account Owner only: https://my.trackjs.com/account/organization)",
+          "isRequired": true,
+          "isSecret": true
+        },
+        {
+          "name": "TRACKJS_CUSTOMER_ID",
+          "description": "TrackJS Customer ID (Account Owner only: https://my.trackjs.com/account/organization)",
+          "isRequired": true,
+          "isSecret": false
+        }
+      ]
+    }
+  ]
+}
